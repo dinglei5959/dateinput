@@ -83,11 +83,13 @@
     }
 
     this.deleteHandler = function () {
-      if (_this.now >= _this.length) {
+      if (_this.now >= 0) {
+        if (_this.now >= _this.length) {
+          _this.now --
+        }
+        _this[_this.now] = 'x'
         _this.now --
       }
-      _this[_this.now] = 'x'
-      _this.now --
     }
     this.numHandler = function (key) {    // 改变val 的值     且改变后  会触发display
       for (let i = _this.now; _this.now < _this.length; i++) {
